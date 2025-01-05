@@ -13,8 +13,11 @@ RUN npm install
 # 소스 파일 복사
 COPY . .
 
+# NestJS 애플리케이션 빌드
+RUN npm run build
+
 # 애플리케이션 실행 포트
 EXPOSE 3000
 
-# 애플리케이션 시작 명령
+# 프로덕션 모드 실행
 CMD ["npm", "run", "start:prod"]
