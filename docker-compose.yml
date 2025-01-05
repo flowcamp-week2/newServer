@@ -14,3 +14,4 @@ services:
     volumes:
       - .:/app
     restart: always
+    command: npm run start:prod
