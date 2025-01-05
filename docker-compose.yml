@@ -10,7 +10,7 @@ services:
       - "3000:3000" # 로컬 포트 3000을 컨테이너의 3000번 포트에 매핑
     environment:
       - NODE_ENV=production
-      - MONGODB_ATLAS_URL=mongodb+srv://kminbo214:WMqKpVaEnQyRUg51@cluster0.tog8o.mongodb.net/madweek2?retryWrites=true&w=majority&appName=Cluster0 # 환경변수 참조
+      - MONGODB_ATLAS_URL=${MONGODB_ATLAS_URL} # 환경변수 참조
     env_file:
       - .env
     volumes:
