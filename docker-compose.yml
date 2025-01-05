@@ -8,12 +8,8 @@ services:
     container_name: backend_app
     ports:
       - "3000:3000" # 로컬 포트 3000을 컨테이너의 3000번 포트에 매핑
-    environment:
-      - NODE_ENV=production
-      - MONGODB_ATLAS_URL=${MONGODB_ATLAS_URL} # 환경변수 참조
     env_file:
       - .env
     volumes:
       - .:/app
-    restart: always
     command: npm run start:prod
