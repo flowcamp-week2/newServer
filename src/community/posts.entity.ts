@@ -26,4 +26,6 @@ export class Posts{
 
     @Column()
     category:string; // chats or infos or comments
+
+    //댓글은 아직 안 만듦
 }

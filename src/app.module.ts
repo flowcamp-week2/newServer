@@ -5,6 +5,7 @@ import { CommunityModule } from './community/community.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeORMConfig } from './configs/typeorm.config';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [ 
@@ -17,7 +18,7 @@ import { typeORMConfig } from './configs/typeorm.config';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) =>
         await typeORMConfig(configService),
-    }),    CommunityModule
+    }),    CommunityModule, AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
