@@ -41,13 +41,13 @@ export class CommunityService {
     }
 
     async createPost(post: Partial<Posts>): Promise<Posts>{
-        const newPost = this.postRepository.create(post);
-        return this.postRepository.save(newPost);
+        const newPost = await this.postRepository.create(post);
+        return await this.postRepository.save(newPost);
     }
 
     //문자열 postId를 받아서 ObjectId로 변환한 뒤 해당 게시글을 찾음
     async findPostById(postId: string): Promise<Posts> { //url 통해서 string으로 들어오니까.
-        const objectId = new ObjectId(postId);
+        const objectId = await new ObjectId(postId);
         return this.postRepository.findOneBy({ id: objectId}); //몽고디비의 _id에 해당하는 ObjectId로 단일 문서를 찾을 때 사용
     }
     
@@ -61,7 +61,7 @@ export class CommunityService {
             throw new Error('게시글을 찾을 수 없습니다.');
         }
 
-        const newReply = this.replyRepository.create({
+        const newReply = await this.replyRepository.create({
             ...replyData,
             posts: post,
         });

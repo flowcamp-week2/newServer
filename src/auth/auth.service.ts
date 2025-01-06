@@ -39,14 +39,14 @@ export class AuthService {
             return {success: false, message: 'Email is already in use'};
         }
         //존재하는 이메일 없으면
-        const newUser = this.userRepository.create(userData);
+        const newUser = await this.userRepository.create(userData);
         await this.userRepository.save(newUser);
         return {success: true, message: 'Signup successful. You can now log in.'};
     }
 
     //내 정보 수정
     async updateUser(updateData: {id: string, user_id: string, name: string, email: string, password: string, nickname: string, contact?: string}){
-        const objectId = new ObjectId(updateData.id);
+        const objectId = await new ObjectId(updateData.id);
         const user = await this.userRepository.findOneBy({id: objectId});
 
         //해당 유저 정보 없음
