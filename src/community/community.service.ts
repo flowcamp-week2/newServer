@@ -3,12 +3,16 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Posts} from './posts.entity';
 import { ObjectId } from 'mongodb';
+import { Reply } from './reply.entity';
 
 @Injectable()
 export class CommunityService {
     constructor(
         @InjectRepository(Posts)
-        private readonly postRepository: Repository<Posts>
+        private readonly postRepository: Repository<Posts>,
+
+        @InjectRepository(Reply)
+        private readonly replyRepository: Repository<Reply>,
     ){}
 
 
@@ -37,7 +41,8 @@ export class CommunityService {
     }
 
     async createPost(post: Partial<Posts>): Promise<Posts>{
-        return this.postRepository.save(post);
+        const newPost = this.postRepository.create(post);
+        return this.postRepository.save(newPost);
     }
 
     //문자열 postId를 받아서 ObjectId로 변환한 뒤 해당 게시글을 찾음
@@ -46,8 +51,26 @@ export class CommunityService {
         return this.postRepository.findOneBy({ id: objectId}); //몽고디비의 _id에 해당하는 ObjectId로 단일 문서를 찾을 때 사용
     }
     
-    /*
-    async createReply(){
-                
-    }*/
+    
+    async createReply(postId: string, replyData: Partial<Reply>){
+        const post = await this.postRepository.findOne({
+            where: {id: new ObjectId(postId)},
+        });
+
+        if (!post){
+            throw new Error('게시글을 찾을 수 없습니다.');
+        }
+
+        const newReply = this.replyRepository.create({
+            ...replyData,
+            posts: post,
+        });
+
+        await this.replyRepository.save(newReply);
+
+        post.replies = [...(post.replies || []), newReply];
+        await this.postRepository.save(post);
+
+        return newReply;
+    }
 }

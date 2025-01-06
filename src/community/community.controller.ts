@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
 import { CommunityService } from './community.service';
 import { Posts } from './posts.entity';
+import { Reply } from './reply.entity';
 
 @Controller('community')
 export class CommunityController {
@@ -44,10 +45,11 @@ export class CommunityController {
     return this.communityService.findPostById(postId);
   }
 
-/*
+
   //댓글 작성
   @Post('/:postId/comment')
-  createReply(){
-    return this.communityService.createReply(); 
-  }*/
+  createReply(@Param('postId') postId: string, @Body() replyData: Partial<Reply>){
+    this.logger.log('createReply 함수');
+    return this.communityService.createReply(postId, replyData); 
+  }
 }
