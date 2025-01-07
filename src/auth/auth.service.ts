@@ -78,13 +78,16 @@ export class AuthService {
     }
 
     //내 정보 수정
-    async updateUser(updateData: {id: string, user_id: string, name: string, email: string, password: string, nickname: string, contact?: string}){
-        if (!ObjectId.isValid(updateData.id)) {
-            throw new BadRequestException('Invalid user ID format');
-        }
+    async updateUser(updateData: {user_id: string, name: string, email: string, password: string, nickname: string, contact?: string}){
+        // if (!ObjectId.isValid(updateData.id)) {
+        //     throw new BadRequestException('Invalid user ID format');
+        // }
 
-        const objectId = await new ObjectId(updateData.id);
-        const user = await this.userRepository.findOneBy({id: objectId});
+        // const objectId = await new ObjectId(updateData.id);
+        // const user = await this.userRepository.findOneBy({id: objectId});
+
+        const updateUserId = await new ObjectId(updateData.user_id);
+        const user = await this.userRepository.findOneBy({id: updateUserId});
 
         //해당 유저 정보 없음
         if (!user){
