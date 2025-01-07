@@ -15,10 +15,13 @@ export class AuthService {
 
     //로그인
     async login(user_id: string, password: string){
-        const user = await this.userRepository.findOneBy({user_id});
+        const user = await this.userRepository.findOneBy({user_id: user_id});
         //실패
-        if (!user || user.password !== password){
-            return {success: false, message: 'Invalid user_id or password'}
+        if (!user){
+            return {success: false, message: 'Invalid user_id'}
+        }
+        if (user.password !== password){
+            return {success: false, message: 'password'}
         }
         //성공
         //JWT 토큰 생성 로직 

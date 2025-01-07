@@ -39,9 +39,9 @@ export class AuthController {
 
   //기본 회원가입
   @Post('/signup')
-  signUp(@Body() userData: { user_id: string; name: string; email: string; password: string; nickname: string; contact?: string }){
+  async signUp(@Body() userData: { user_id: string; name: string; email: string; password: string; nickname: string; contact?: string }){
     this.logger.log('signUp 함수');
-    return this.authService.signUp(userData);
+    return await this.authService.signUp(userData);
   }
 
   //내 정보 수정
