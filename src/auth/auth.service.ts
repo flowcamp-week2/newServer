@@ -3,12 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { Repository } from 'typeorm';
 import { ObjectId } from 'mongodb';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
     constructor(
         @InjectRepository(User)
-        private readonly userRepository: Repository<User>
+        private readonly userRepository: Repository<User>,
+        private readonly jwtService: JwtService,
     ){}
 
     //로그인
@@ -19,14 +21,42 @@ export class AuthService {
             return {success: false, message: 'Invalid user_id or password'}
         }
         //성공
-        //JWT 토큰 생성 로직 추가 필요!
-        const token = 'jwt-token-generated-by-server';
+        //JWT 토큰 생성 로직 
+        const token = this.jwtService.sign({user_id: user.user_id, id: user.id});
         return {success: true, message: 'Login successful', token};
     }
 
-    //구글 로그인 (나중에 구현)
-    async googleLogin(){
-        return { success: false, message: 'Google login not implemented yet' };
+    async googleLogin(user: any) {
+        try {
+            console.log('Google Login User:', user);
+    
+            if (!user) {
+                throw new Error('No user object received');
+            }
+    
+            // 사용자 이메일로 계정 찾기
+            let existingUser = await this.userRepository.findOneBy({ email: user.email });
+            console.log('Existing User:', existingUser);
+    
+            // 새 사용자 생성
+            if (!existingUser) {
+                existingUser = await this.userRepository.create({
+                    user_id: user.id,
+                    name: user.displayName,
+                    email: user.email,
+                    password: '', // 구글 로그인은 비밀번호 필요 없음
+                    nickname: user.displayName,
+                });
+                await this.userRepository.save(existingUser);
+            }
+    
+            // JWT 토큰 생성
+            const token = await this.jwtService.sign({ user_id: existingUser.user_id, id: existingUser.id });
+            return { success: true, message: 'Google login successful', token };
+        } catch (error) {
+            console.error('Google Login Error:', error);
+            return { success: false, message: 'Google login failed', error: error.message };
+        }
     }
 
     //기본 회원가입

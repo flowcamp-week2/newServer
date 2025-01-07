@@ -6,19 +6,19 @@ export class User{
     @ObjectIdColumn()
     id: ObjectId;
 
-    @Column()
+    @Column({unique: true})
     user_id: string;
 
     @Column()
     name: string;
 
-    @Column()
+    @Column({unique: true})
     email: string;
 
-    @Column()
+    @Column({nullable: true})
     password: string;
 
-    @Column()
+    @Column({nullable: true})
     nickname: string;
 
     @Column({nullable: true})
