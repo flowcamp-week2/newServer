@@ -86,8 +86,8 @@ export class AuthService {
         // const objectId = await new ObjectId(updateData.id);
         // const user = await this.userRepository.findOneBy({id: objectId});
 
-        const updateUserId = await new ObjectId(updateData.user_id);
-        const user = await this.userRepository.findOneBy({id: updateUserId});
+        const updateUserId = await updateData.user_id;
+        const user = await this.userRepository.findOneBy({user_id: updateUserId});
 
         //해당 유저 정보 없음
         if (!user){
