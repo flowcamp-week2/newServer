@@ -29,38 +29,94 @@ export class AuthService {
         return {success: true, message: 'Login successful', token};
     }
 
-    async googleLogin(user: any) {
+    // async googleLogin(user: any) {
+    //     try {
+    //         console.log('Google Login User:', user);
+    
+    //         if (!user) {
+    //             throw new Error('No user object received');
+    //         }
+    
+    //         // 사용자 이메일로 계정 찾기
+    //         let existingUser = await this.userRepository.findOneBy({ email: user.email });
+    //         console.log('Existing User:', existingUser);
+    
+    //         // 새 사용자 생성
+    //         if (!existingUser) {
+    //             existingUser = await this.userRepository.create({
+    //                 user_id: user.id,
+    //                 name: user.displayName,
+    //                 email: user.email,
+    //                 password: '', // 구글 로그인은 비밀번호 필요 없음
+    //                 nickname: user.displayName,
+    //             });
+    //             await this.userRepository.save(existingUser);
+    //         }
+    
+    //         // JWT 토큰 생성
+    //         const token = await this.jwtService.sign({ user_id: existingUser.user_id, id: existingUser.id });
+    //         return { success: true, message: 'Google login successful', token };
+    //     } catch (error) {
+    //         console.error('Google Login Error:', error);
+    //         return { success: false, message: 'Google login failed', error: error.message };
+    //     }
+    // }
+    
+
+      // 카카오 로그인 처리
+    async kakaoLogin(user: any) {
         try {
-            console.log('Google Login User:', user);
-    
-            if (!user) {
-                throw new Error('No user object received');
-            }
-    
-            // 사용자 이메일로 계정 찾기
-            let existingUser = await this.userRepository.findOneBy({ email: user.email });
-            console.log('Existing User:', existingUser);
-    
-            // 새 사용자 생성
-            if (!existingUser) {
-                existingUser = await this.userRepository.create({
-                    user_id: user.id,
-                    name: user.displayName,
-                    email: user.email,
-                    password: '', // 구글 로그인은 비밀번호 필요 없음
-                    nickname: user.displayName,
-                });
-                await this.userRepository.save(existingUser);
-            }
-    
-            // JWT 토큰 생성
-            const token = await this.jwtService.sign({ user_id: existingUser.user_id, id: existingUser.id });
-            return { success: true, message: 'Google login successful', token };
+        // 사용자 정보가 이미 데이터베이스에 있는지 확인
+        let existingUser = await this.findUserByEmail(user.email);
+
+        // 사용자 정보가 없으면 새로 생성
+        if (!existingUser) {
+            existingUser = await this.createUser({
+            id: user.id,
+            name: user.username,
+            email: user.email
+            });
+        }
+
+        // JWT 토큰 생성
+        const token = this.jwtService.sign({ userId: existingUser.id, email: existingUser.email });
+          return { success: true, message: 'Kakao login successful', token };
         } catch (error) {
-            console.error('Google Login Error:', error);
-            return { success: false, message: 'Google login failed', error: error.message };
+        console.error('Kakao Login Error:', error);
+        throw new Error('Failed to login with Kakao');
+        }  
+    }
+
+    async findUserByEmail(email: string) {
+        try {
+            // 이메일로 사용자 검색
+            const user = await this.userRepository.findOneBy({ email });
+            return user; // 사용자 객체 반환
+        } catch (error) {
+            console.error('Error finding user by email:', error);
+            throw new Error('Failed to find user by email');
         }
     }
+    
+    async createUser(userData: { id: string; name: string; email: string; nickname?: string; }) {
+        try {
+            // 새로운 사용자 생성
+            const newUser = this.userRepository.create({
+                user_id: userData.id,
+                name: userData.name,
+                email: userData.email,
+                nickname: userData.nickname || userData.name, // 닉네임이 없으면 이름 사용
+                password: '', // 카카오 로그인은 비밀번호가 필요하지 않음
+            });
+    
+            // 데이터베이스에 저장
+            const savedUser = await this.userRepository.save(newUser);
+            return savedUser; // 저장된 사용자 객체 반환
+        } catch (error) {
+            console.error('Error creating user:', error);
+            throw new Error('Failed to create user');
+        }
+    }    
 
     //기본 회원가입
     async signUp(userData: {user_id: string, name: string, email: string, password: string, nickname: string, contact?: string}){
