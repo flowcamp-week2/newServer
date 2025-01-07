@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeORMConfig } from './configs/typeorm.config';
 import { AuthModule } from './auth/auth.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [ 
@@ -18,7 +19,8 @@ import { AuthModule } from './auth/auth.module';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) =>
         await typeORMConfig(configService),
-    }),    CommunityModule, AuthModule
+    }),    CommunityModule, AuthModule,
+    MongooseModule.forRoot(process.env.MONGODB_ATLAS_URL),
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -10,10 +10,9 @@ export class AuthController {
 
   //로그인
   @Get('/login')
-  async login(@Req() req){
+  async login(@Body() body: {user_id: string, password: string}){
     this.logger.log('login 함수');
-    const {user_id, password} = req.body;
-    return this.authService.login(user_id, password);
+    return this.authService.login(body.user_id,  body.password);
   }
 
   //구글 로그인 페이지로 리다이렉트
@@ -40,15 +39,15 @@ export class AuthController {
 
   //기본 회원가입
   @Post('/signup')
-  signUp(@Req() req){
+  signUp(@Body() userData: { user_id: string; name: string; email: string; password: string; nickname: string; contact?: string }){
     this.logger.log('signUp 함수');
-    return this.authService.signUp(req.body);
+    return this.authService.signUp(userData);
   }
 
   //내 정보 수정
   @Patch('/mypage')
-  updateUser(@Req() req){
+  updateUser(@Body() userData: { id: string, user_id: string; name: string; email: string; password: string; nickname: string; contact?: string }){
     this.logger.log('updateUser 함수');
-    return this.authService.updateUser(req.body);
+    return this.authService.updateUser(userData);
   }
 }
