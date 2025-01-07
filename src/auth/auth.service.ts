@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { Repository } from 'typeorm';
@@ -15,13 +15,13 @@ export class AuthService {
 
     //로그인
     async login(user_id: string, password: string){
-        const user = await this.userRepository.findOneBy({user_id: user_id});
+        const user = await this.userRepository.findOneBy({user_id});
         //실패
         if (!user){
             return {success: false, message: 'Invalid user_id'}
         }
-        if (user.password !== password){
-            return {success: false, message: 'password'}
+        else if (user.password !== password){
+            return {success: false, message: 'Invalid password'}
         }
         //성공
         //JWT 토큰 생성 로직 
@@ -79,6 +79,10 @@ export class AuthService {
 
     //내 정보 수정
     async updateUser(updateData: {id: string, user_id: string, name: string, email: string, password: string, nickname: string, contact?: string}){
+        if (!ObjectId.isValid(updateData.id)) {
+            throw new BadRequestException('Invalid user ID format');
+        }
+
         const objectId = await new ObjectId(updateData.id);
         const user = await this.userRepository.findOneBy({id: objectId});
 
@@ -88,7 +92,12 @@ export class AuthService {
         }
 
         //업데이트 성공
-        Object.assign(user, updateData);
+        if (updateData.name) user.name = updateData.name;
+        if (updateData.email) user.email = updateData.email;
+        if (updateData.password) user.password = updateData.password;
+        if (updateData.nickname) user.nickname = updateData.nickname;
+        if (updateData.contact) user.contact = updateData.contact;
+                
         await this.userRepository.save(user);
         return { success: true, message: 'User information updated successfully' };
     }

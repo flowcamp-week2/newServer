@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Logger, Patch, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Logger, Patch, Post, Query, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from '@nestjs/passport';
 
@@ -10,9 +10,9 @@ export class AuthController {
 
   //로그인
   @Get('/login')
-  async login(@Body() body: {user_id: string, password: string}){
+  async login(@Query() query: {user_id: string, password: string}){
     this.logger.log('login 함수');
-    return this.authService.login(body.user_id,  body.password);
+    return this.authService.login(query.user_id,  query.password);
   }
 
   //구글 로그인 페이지로 리다이렉트
