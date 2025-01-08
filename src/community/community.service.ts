@@ -47,7 +47,7 @@ export class CommunityService {
 
     //상세글 보기
     //문자열 postId를 받아서 ObjectId로 변환한 뒤 해당 게시글을 찾음
-    async findPostById(postId: string): Promise<Posts> { //url 통해서 string으로 들어오니까.
+    async findPostById(postId: string) { //url 통해서 string으로 들어오니까.
         try {
             // ObjectId 변환 검증
             if (!ObjectId.isValid(postId)) {
@@ -55,7 +55,9 @@ export class CommunityService {
             }
         
             const objectId = new ObjectId(postId);
+            console.log('objectId: ', objectId);
             const post = await this.postRepository.findOneBy({ _id: objectId });
+            console.log('post: ', post);
         
             if (!post) {
               throw new Error('Post not found');
