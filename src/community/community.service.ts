@@ -71,6 +71,7 @@ export class CommunityService {
     }
     
     async createReply(postId: string, replyData: Partial<Reply>){
+        console.log('postId in createReply: ', postId);
         const post = await this.postRepository.findOne({
             where: {_id: new ObjectId(postId)},
         });
