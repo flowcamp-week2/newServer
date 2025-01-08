@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { Repository } from 'typeorm';
@@ -13,8 +13,11 @@ export class AuthService {
         private readonly jwtService: JwtService,
     ){}
 
+      private readonly logger = new Logger(AuthService.name);
+
     //로그인
     async login(user_id: string, password: string){
+        this.logger.log('login 함수 in authService');
         console.log('login 함수 in authService');
         const user = await this.userRepository.findOneBy({user_id});
         //실패
@@ -28,6 +31,7 @@ export class AuthService {
         //JWT 토큰 생성 로직 
         const token = this.jwtService.sign({user_id: user.user_id, id: user.id});
         console.log(user);
+        this.logger.log('user:', user);
         return {success: true, message: 'Login successful!!', token, user_id: user.user_id, name: user.name, email: user.email, nickname: user.nickname, contact: user.contact};
     }
 
