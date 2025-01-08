@@ -12,8 +12,8 @@ export class Reply{
     posts: Posts;
 
     //many to one 관계 설정 & user 만들어야 함. 그러려면 auth 토큰 어쩌구 해야 함.
-    //따라서 일단 string으로 만들어놓자!...? 
-    @Column()
+    //따라서 일단 string으로 만들어놓자!...? 가 아니라 그냥 nullable 로 만들어놓자.
+    @Column({nullable: true})
     user_nickname: string;
 
     @Column()

@@ -40,17 +40,33 @@ export class CommunityService {
         });
     }
 
-    async createPost(post: Partial<Posts>): Promise<Posts>{
+    async createPost(post: Partial<Posts>): Promise<Posts | null>{
         const newPost = await this.postRepository.create(post);
         return await this.postRepository.save(newPost);
     }
 
+    //상세글 보기
     //문자열 postId를 받아서 ObjectId로 변환한 뒤 해당 게시글을 찾음
     async findPostById(postId: string): Promise<Posts> { //url 통해서 string으로 들어오니까.
-        const objectId = await new ObjectId(postId);
-        return this.postRepository.findOneBy({ id: objectId}); //몽고디비의 _id에 해당하는 ObjectId로 단일 문서를 찾을 때 사용
+        try {
+            // ObjectId 변환 검증
+            if (!ObjectId.isValid(postId)) {
+              throw new Error('Invalid PostId format');
+            }
+        
+            const objectId = new ObjectId(postId);
+            const post = await this.postRepository.findOneBy({ id: objectId });
+        
+            if (!post) {
+              throw new Error('Post not found');
+            }
+        
+            return post;
+          } catch (error) {
+            console.error('Error in findPostById:', error.message);
+            throw error;
+          }
     }
-    
     
     async createReply(postId: string, replyData: Partial<Reply>){
         const post = await this.postRepository.findOne({
