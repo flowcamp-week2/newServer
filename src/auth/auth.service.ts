@@ -26,7 +26,8 @@ export class AuthService {
         //성공
         //JWT 토큰 생성 로직 
         const token = this.jwtService.sign({user_id: user.user_id, id: user.id});
-        return {success: true, message: 'Login successful', token, user_id: user.user_id, name: user.name, email: user.email, nickname: user.nickname, contact: user.contact};
+        console.log(user);
+        return {success: true, message: 'Login successful!!', token, user_id: user.user_id, name: user.name, email: user.email, nickname: user.nickname, contact: user.contact};
     }
 
     // async googleLogin(user: any) {
