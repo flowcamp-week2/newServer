@@ -15,6 +15,7 @@ export class AuthService {
 
     //로그인
     async login(user_id: string, password: string){
+        console.log('login 함수 in authService');
         const user = await this.userRepository.findOneBy({user_id});
         //실패
         if (!user){
