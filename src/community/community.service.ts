@@ -88,6 +88,7 @@ export class CommunityService {
 
         post.replies = [...(post.replies || []), newReply];
         await this.postRepository.save(post);
+        console.log('updated post in createReply: ', post);
 
         return newReply;
     }

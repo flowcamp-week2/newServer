@@ -29,6 +29,6 @@ export class Posts{
     @Column()
     category:string; // chats or infos or comments
 
-    @OneToMany(()=> Reply, reply => reply.posts, {eager: true, cascade: true, nullable: true})
+    @OneToMany(()=> Reply, reply => reply.posts, {cascade: true, nullable: true, eager: true})
     replies: Reply[];
 }

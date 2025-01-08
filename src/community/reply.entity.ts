@@ -6,7 +6,7 @@ import internal from "stream";
 @Entity()
 export class Reply{
     @ObjectIdColumn()
-    id: ObjectId;
+    _id: ObjectId;
 
     @ManyToOne(() => Posts, posts => posts.replies, {onDelete: 'CASCADE'})
     posts: Posts;
