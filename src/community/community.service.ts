@@ -55,7 +55,7 @@ export class CommunityService {
             }
         
             const objectId = new ObjectId(postId);
-            const post = await this.postRepository.findOneBy({ id: objectId });
+            const post = await this.postRepository.findOneBy({ _id: objectId });
         
             if (!post) {
               throw new Error('Post not found');
@@ -70,7 +70,7 @@ export class CommunityService {
     
     async createReply(postId: string, replyData: Partial<Reply>){
         const post = await this.postRepository.findOne({
-            where: {id: new ObjectId(postId)},
+            where: {_id: new ObjectId(postId)},
         });
 
         if (!post){

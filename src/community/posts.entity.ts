@@ -5,7 +5,7 @@ import { Reply } from "./reply.entity";
 @Entity()
 export class Posts{
     @ObjectIdColumn({name: '_id'})
-    id: ObjectId;
+    _id: ObjectId;
 
     @Column()
     title: string;
