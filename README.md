@@ -1,99 +1,135 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 티켓피커
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 티켓팅 무조건 성공하려면?? 티켓피커!
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 기획
 
-## Description
+![5yq9fwhg2o7x6oc1.webp](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/3b87bd89-2b45-429d-b683-e33dfa0082de/5yq9fwhg2o7x6oc1.webp)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### 프로젝트를 시작하면서… 나에게는 고민이 하나 생겼다..(개큰고민)
 
-## Project setup
+1월 8일 오후 7시.. 발표 두시간 전.. 좋아하는 가수의 콘서트 티켓팅 일정이 잡힌 것…!
 
-```bash
-$ npm install
-```
+어떡하지……?
 
-## Compile and run the project
+### …아 티켓팅 도와주는 사이트를 만들면 되겠다!!!!!!
 
-```bash
-# development
-$ npm run start
+### 티켓피커는 콘서트, 뮤지컬/연극, 전시 등 모든 공연들의 정보를 제공하고, 사람들과 공유하고 이야기할 수 있는 커뮤니티 플랫폼입니다. 서버시간과 티켓팅 연습 게임을 제공합니다.
 
-# watch mode
-$ npm run start:dev
+## Team & 개발 환경
 
-# production mode
-$ npm run start:prod
-```
+<aside>
+<img src="/icons/computer_blue.svg" alt="/icons/computer_blue.svg" width="40px" />
 
-## Run tests
+FE: 최준명
 
-```bash
-# unit tests
-$ npm run test
+- Language: Typescript
+- Framework: Svelte
+</aside>
 
-# e2e tests
-$ npm run test:e2e
+<aside>
+<img src="/icons/server_blue.svg" alt="/icons/server_blue.svg" width="40px" />
 
-# test coverage
-$ npm run test:cov
-```
+BE: 김보민
 
-## Deployment
+- Language: Typescript
+- Framework: NestJS
+</aside>
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+<aside>
+<img src="/icons/gear_blue.svg" alt="/icons/gear_blue.svg" width="40px" />
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+- Server: GCP(Google Cloud Platform)
+- Database: MongoDB
+- SDK: Kakao login API
+</aside>
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+## APIs
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+[madcamp_week2_api 17068b85547a8057ac56ebfd1225fb0a.pdf](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/9834e46f-86ec-4984-bb1b-cfb2c1cfad96/madcamp_week2_api_17068b85547a8057ac56ebfd1225fb0a.pdf)
 
-## Resources
+## DB diagram
 
-Check out a few resources that may come in handy when working with NestJS:
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/d2d548a2-7e5c-4756-b8f7-cc1f6fd45e5c/image.png)
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+https://dbdiagram.io/d/madcamp_week2-6777efad5406798ef734f294
 
-## Support
+## 서비스
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### 홈  화면
 
-## Stay in touch
+![스크린샷 2025-01-08 오후 6.17.05.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/ed96ef21-15ca-4e27-bcf4-c81b24cd6c33/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.17.05.png)
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+![스크린샷 2025-01-08 오후 6.17.46.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/efc21d33-ccb7-4f18-b935-796d3d429a1a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.17.46.png)
 
-## License
+![스크린샷 2025-01-08 오후 6.18.11.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/7bb9ae67-f8bf-467e-9c0d-198c9c3b29cb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.18.11.png)
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- 콘서트, 뮤지컬/연극, 전시 정보
+- 최신 커뮤니티 글
+
+### 로그인/회원가입
+
+![스크린샷 2025-01-08 오후 6.19.09.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/a11d556c-655e-447d-aaf5-9f42c77c595f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.19.09.png)
+
+![스크린샷 2025-01-08 오후 6.19.35.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/c9c0f8b7-0a15-4c64-b8d5-a9367d1e7df1/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.19.35.png)
+
+- 일반로그인
+- 카카오 로그인
+- 회원가입
+
+### 공연 정보
+
+![스크린샷 2025-01-08 오후 6.20.08.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/0fcad318-d74a-4247-9cf7-afb99d7d2e28/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.20.08.png)
+
+![스크린샷 2025-01-08 오후 6.21.46.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/59cb0056-c7f3-4477-97a9-c4c63d7bd679/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.21.46.png)
+
+- 공연 날짜, 티켓팅 날짜 등 필요한 정보
+
+### 커뮤니티
+
+![스크린샷 2025-01-08 오후 8.32.02.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/944d6b66-53f4-43dc-a510-144f66986564/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.32.02.png)
+
+![스크린샷 2025-01-08 오후 8.32.34.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/92451280-660e-4dbd-8071-2d4cbae03f63/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.32.34.png)
+
+- 잡담, 정보, 후기 글
+
+### 서버 시간
+
+![스크린샷 2025-01-08 오후 6.23.18.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/a3e5870d-3beb-4743-ae42-7a868999b998/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.23.18.png)
+
+![스크린샷 2025-01-08 오후 8.06.27.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/6d485879-4b79-439c-b433-1dc1b3eaa839/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.06.27.png)
+
+- 여러 티켓팅 사이트의 서버시간을 제공함
+- 티켓팅할 때 띄워놓을 수 있는 팝업화면
+
+![1000032727.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/e8460ca8-1571-4143-a253-8996aa0679e3/1000032727.jpg)
+
+실제 사용 예시
+
+### 모의 티켓팅
+
+[화면 기록 2025-01-08 오후 7.58.15.mov](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/0daf1e26-f486-4bac-894e-012f2bebe730/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.58.15.mov)
+
+- 버튼 클릭 속도에 따른 대기자 수 구현
+- 포도알 구현
+- 실전과 유사한 연습으로 티켓팅 실력 증진
+
+## 티켓팅 결과
+
+![스크린샷 2025-01-08 오후 7.43.48.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/656043ce-da79-4f50-a507-3fcabbb8b855/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.43.48.png)
+
+무한로딩 억까로 인해 개같이 실패
+
+## 후기
+
+김보민
+
+- DB 연결 & 서버 연결 & 프론트 연결 등 뭐 하나 한 번에 잘 되는 게 없어서 힘들었다…
+- 그럼에도 내가 못하는 걸 기다려주고 여러 문제를 같이 해결해준 팀원에게 감사…
+- 복잡한 서비스를 기획하지 말자는 교훈을 얻었다
+
+최준명
+
+- 웹 개발도 프론트도 다 처음인데, 좋은 짝꿍 만나서 재밌게 개발한 것 같다.
+- 스벨트 개발해주신 Rich Harris님께 감사드린다.
+- 억울하다. 난 진짜 빨리 클릭했다.
