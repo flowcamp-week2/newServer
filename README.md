@@ -39,12 +39,9 @@ BE: 김보민
 - SDK: Kakao login API
 </aside>
 
-## APIs
-[📄 madcamp_week2_api.pdf](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/9834e46f-86ec-4984-bb1b-cfb2c1cfad96/madcamp_week2_api_17068b85547a8057ac56ebfd1225fb0a.pdf)
-
 ## DB diagram
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/d2d548a2-7e5c-4756-b8f7-cc1f6fd45e5c/image.png)
+![image](https://github.com/user-attachments/assets/1fb3b695-7f71-458f-8b61-b6e5c228ad8f)
 
 https://dbdiagram.io/d/madcamp_week2-6777efad5406798ef734f294
 
@@ -52,20 +49,20 @@ https://dbdiagram.io/d/madcamp_week2-6777efad5406798ef734f294
 
 ### 홈  화면
 
-![스크린샷 2025-01-08 오후 6.17.05.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/ed96ef21-15ca-4e27-bcf4-c81b24cd6c33/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.17.05.png)
 
-![스크린샷 2025-01-08 오후 6.17.46.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/efc21d33-ccb7-4f18-b935-796d3d429a1a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.17.46.png)
-
-![스크린샷 2025-01-08 오후 6.18.11.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/7bb9ae67-f8bf-467e-9c0d-198c9c3b29cb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.18.11.png)
+<img width="1426" alt="스크린샷 2025-01-08 오후 6 17 05" src="https://github.com/user-attachments/assets/41b5b904-9dc0-48a8-ad63-aed855cdf822" />
+<img width="1364" alt="스크린샷 2025-01-08 오후 6 17 46" src="https://github.com/user-attachments/assets/491f7abf-76a0-463c-9aa4-68a3771229dc" />
+<img width="1364" alt="스크린샷 2025-01-08 오후 6 18 11" src="https://github.com/user-attachments/assets/019f7825-16fc-4dd7-aa73-85639edcf1c5" />
 
 - 콘서트, 뮤지컬/연극, 전시 정보
 - 최신 커뮤니티 글
 
 ### 로그인/회원가입
 
-![스크린샷 2025-01-08 오후 6.19.09.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/a11d556c-655e-447d-aaf5-9f42c77c595f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.19.09.png)
-
-![스크린샷 2025-01-08 오후 6.19.35.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/c9c0f8b7-0a15-4c64-b8d5-a9367d1e7df1/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.19.35.png)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2d5a7d8-4bc2-40d1-a0ee-092e00f5b172" width="45%">
+  <img src="https://github.com/user-attachments/assets/74849903-2df7-4de9-9cc3-658aa0bcd42e" width="45%">
+</p>
 
 - 일반로그인
 - 카카오 로그인
@@ -73,36 +70,41 @@ https://dbdiagram.io/d/madcamp_week2-6777efad5406798ef734f294
 
 ### 공연 정보
 
-![스크린샷 2025-01-08 오후 6.20.08.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/0fcad318-d74a-4247-9cf7-afb99d7d2e28/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.20.08.png)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cf68232c-69ba-4813-84fd-6a7e0ce034ee" width="45%">
+  <img src="https://github.com/user-attachments/assets/23711259-c378-4b88-b010-1da272251f7c" width="45%">
+</p>
 
-![스크린샷 2025-01-08 오후 6.21.46.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/59cb0056-c7f3-4477-97a9-c4c63d7bd679/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.21.46.png)
 
 - 공연 날짜, 티켓팅 날짜 등 필요한 정보
 
 ### 커뮤니티
 
-![스크린샷 2025-01-08 오후 8.32.02.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/944d6b66-53f4-43dc-a510-144f66986564/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.32.02.png)
+<img width="1292" alt="스크린샷 2025-01-08 오후 8 32 02" src="https://github.com/user-attachments/assets/5d7812e8-fbad-4b1e-bb84-d34602920697" />
+<img width="1292" alt="스크린샷 2025-01-08 오후 8 32 34" src="https://github.com/user-attachments/assets/7cc90e83-839c-4c94-9825-ce93fe3da6a7" />
 
-![스크린샷 2025-01-08 오후 8.32.34.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/92451280-660e-4dbd-8071-2d4cbae03f63/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.32.34.png)
 
 - 잡담, 정보, 후기 글
 
 ### 서버 시간
 
-![스크린샷 2025-01-08 오후 6.23.18.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/a3e5870d-3beb-4743-ae42-7a868999b998/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.23.18.png)
-
-![스크린샷 2025-01-08 오후 8.06.27.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/6d485879-4b79-439c-b433-1dc1b3eaa839/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.06.27.png)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/830e405a-ed5f-4a7b-9439-2583c8f6d0ad" width="60%">
+  <img src="https://github.com/user-attachments/assets/136ea92c-378d-4031-9e26-fcbcbdbd4c67" width="35%">
+</p>
 
 - 여러 티켓팅 사이트의 서버시간을 제공함
 - 티켓팅할 때 띄워놓을 수 있는 팝업화면
 
-![1000032727.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/e8460ca8-1571-4143-a253-8996aa0679e3/1000032727.jpg)
+![1000032727](https://github.com/user-attachments/assets/bb33bd6f-362e-4726-962d-a35ea3fb4756)
 
 실제 사용 예시
 
 ### 모의 티켓팅
 
-[화면 기록 2025-01-08 오후 7.58.15.mov](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/0daf1e26-f486-4bac-894e-012f2bebe730/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.58.15.mov)
+https://github.com/user-attachments/assets/28be4c65-1826-43b8-96e7-5d55a046455c
+
+
 
 - 버튼 클릭 속도에 따른 대기자 수 구현
 - 포도알 구현
@@ -110,20 +112,7 @@ https://dbdiagram.io/d/madcamp_week2-6777efad5406798ef734f294
 
 ## 티켓팅 결과
 
-![스크린샷 2025-01-08 오후 7.43.48.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/656043ce-da79-4f50-a507-3fcabbb8b855/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-01-08_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.43.48.png)
+![스크린샷 2025-01-08 오후 7 43 48](https://github.com/user-attachments/assets/4e5c6981-725e-49bd-9320-b6cba0f321e9)
 
-무한로딩 억까로 인해 개같이 실패
+무한로딩으로 인해 실패
 
-## 후기
-
-김보민
-
-- DB 연결 & 서버 연결 & 프론트 연결 등 뭐 하나 한 번에 잘 되는 게 없어서 힘들었다…
-- 그럼에도 내가 못하는 걸 기다려주고 여러 문제를 같이 해결해준 팀원에게 감사…
-- 복잡한 서비스를 기획하지 말자는 교훈을 얻었다
-
-최준명
-
-- 웹 개발도 프론트도 다 처음인데, 좋은 짝꿍 만나서 재밌게 개발한 것 같다.
-- 스벨트 개발해주신 Rich Harris님께 감사드린다.
-- 억울하다. 난 진짜 빨리 클릭했다.
