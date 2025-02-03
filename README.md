@@ -17,7 +17,6 @@
 ## Team & 개발 환경
 
 <aside>
-<img src="/icons/computer_blue.svg" alt="/icons/computer_blue.svg" width="40px" />
 
 FE: 최준명
 
@@ -26,7 +25,6 @@ FE: 최준명
 </aside>
 
 <aside>
-<img src="/icons/server_blue.svg" alt="/icons/server_blue.svg" width="40px" />
 
 BE: 김보민
 
@@ -35,7 +33,6 @@ BE: 김보민
 </aside>
 
 <aside>
-<img src="/icons/gear_blue.svg" alt="/icons/gear_blue.svg" width="40px" />
 
 - Server: GCP(Google Cloud Platform)
 - Database: MongoDB
@@ -43,12 +40,11 @@ BE: 김보민
 </aside>
 
 ## APIs
-
-[madcamp_week2_api 17068b85547a8057ac56ebfd1225fb0a.pdf](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/9834e46f-86ec-4984-bb1b-cfb2c1cfad96/madcamp_week2_api_17068b85547a8057ac56ebfd1225fb0a.pdf)
+[📄 madcamp_week2_api.pdf](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/9834e46f-86ec-4984-bb1b-cfb2c1cfad96/madcamp_week2_api_17068b85547a8057ac56ebfd1225fb0a.pdf)
 
 ## DB diagram
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/d2d548a2-7e5c-4756-b8f7-cc1f6fd45e5c/image.png)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/d2d548a2-7e5c-4756-b8f7-cc1f6fd45e5c/image.png)
 
 https://dbdiagram.io/d/madcamp_week2-6777efad5406798ef734f294
 
