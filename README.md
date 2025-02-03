@@ -4,9 +4,7 @@
 
 ## 기획
 
-![5yq9fwhg2o7x6oc1.webp](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/3b87bd89-2b45-429d-b683-e33dfa0082de/5yq9fwhg2o7x6oc1.webp)
-
-### 프로젝트를 시작하면서… 나에게는 고민이 하나 생겼다..(개큰고민)
+### 프로젝트를 시작하면서… 나에게는 고민이 하나 생겼다..
 
 1월 8일 오후 7시.. 발표 두시간 전.. 좋아하는 가수의 콘서트 티켓팅 일정이 잡힌 것…!
 
